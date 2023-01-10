@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{amssymb,amsfonts,amsthm,amsmath}
+\usepackage{enumitem}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\setlist[enumerate]{font=\small\bfseries}
+\renewcommand\thefootnote{\textcolor{black}{\arabic{footnote}}}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\begin{document}
+
+\title{PROBABILITY}
+\author{\Large T SIVA PARVATHI - FWC22089}
+\date{}
+
+\maketitle
+\begin{enumerate}[label=13.\arabic{enumi}.\arabic{enumii}]%,ref=\thesection.\theenumi.\theenumi]
+\numberwithin{equation}{enumi}
+%\numberwithin{table}{enumi}
+\setcounter{enumi}{3}
+\setcounter{enumii}{5}
+
+\item \footnote{Read question numbers as (CHAPTER NUMBER).(EXERCISE NUMBER).(QUESTION NUMBER)}
+Find the probability distribution of the number of successes in two tosses of a die, where a success is defined as
+\begin{enumerate}
+\item number greater than 4
+\item six appears on at least one die
+\end{enumerate}
+
+\solution
+Given that a die tossed two times,
+\begin{table}[h]\centering
+	\input{dtable.tex}
+	 \caption{Random Variables(RV) X and Y}\label{table:1}
+\end{table}
+
+\begin{enumerate}
+\item number greater than 4
+
+when we throw a die twice, there are three cases
+
+X=0 means no number greater than 4
+
+X=1 means 1 number greater than 4 
+
+X=2 means 2 numbers greater than 4 
+\begin{align}
+  p_X(k) = \pr{X=k} =
+    \begin{cases}
+      \frac{4}{9},  & \text{ $k =$ 0}\\
+      \frac{4}{9}, & \text{  $k =$ 1}\\
+      \frac{1}{9}, & \text{  $k =$ 2}
+    \end{cases}       
+\end{align}
+\item six appears on at least one die
+\end{enumerate}
+
+there are two cases,
+
+Y=0 means number 6 doesnot appear at all 
+
+Y=1 means number 6 appears atleast on one die 
+\begin{align}
+\pr{Y=1}=\frac{11}{36}\\
+\pr{Y=0}=1-\pr{Y=1}=\frac{25}{36}
+\end{align}
+\begin{align}
+  p_Y(k) = \pr{Y=k} =
+    \begin{cases}
+      \frac{25}{36},  & \text{ $k =$ 0}\\
+      \frac{11}{36}, & \text{  $k =$ 1}
+    \end{cases}       
+\end{align}
+\end{enumerate}
+\end{document}
